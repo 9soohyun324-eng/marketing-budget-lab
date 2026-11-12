@@ -92,18 +92,6 @@ st.info(
 
 st.divider()
 
-with st.expander("데이터 출처와 한계"):
-    st.markdown(
-        """
-        - **출처:** E-commerce Growth & Retail Media Benchmark 2026 (dianatofficial), 라이선스 CC BY-SA 4.0
-        - **기간:** 2026-03-01 ~ 2026-09-26, 10만 개의 캠페인-일 기록
-        - **주의:** 실제 광고 성과가 아니라 **시뮬레이션으로 만든 가상 데이터**입니다. 결과는 학습용 가설로만 해석해야 합니다.
-        - **데이터 처리:** 원본의 `roas` 열은 비용이 1달러 미만인 277행에서 값이 어긋나므로, 이 앱에서는 합계로 ROAS를 다시 계산합니다. `week` 열은 날짜와 맞지 않아 사용하지 않습니다.
-        """
-    )
-
 with st.expander("원본 데이터 미리보기"):
     st.dataframe(df.head(100), use_container_width=True)
-       
-
- 
+    

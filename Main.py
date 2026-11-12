@@ -28,6 +28,13 @@ def summarize(df: pd.DataFrame, by: str) -> pd.DataFrame:
     return g.sort_values("ROAS", ascending=False).reset_index()
 
 
+if not DATA_PATH.exists():
+    st.error(
+        "데이터 파일을 찾을 수 없습니다. 깃허브 저장소에 `data/marketing_telemetry.csv` 파일이 "
+        "올라가 있는지, 폴더 이름(`data`)과 파일 이름의 철자·대소문자가 같은지 확인하세요."
+    )
+    st.stop()
+
 df = load_data()
 
 st.title("📊 광고 예산 재배분 실습실")
@@ -97,3 +104,6 @@ with st.expander("데이터 출처와 한계"):
 
 with st.expander("원본 데이터 미리보기"):
     st.dataframe(df.head(100), use_container_width=True)
+       
+
+ 
